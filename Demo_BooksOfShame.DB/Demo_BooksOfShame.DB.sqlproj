@@ -56,5 +56,16 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Seed" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Book.sql" />
+    <Build Include="Book_Status.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Seed\initial-data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Demo_BooksOfShame.DB.publish.xml" />
   </ItemGroup>
 </Project>

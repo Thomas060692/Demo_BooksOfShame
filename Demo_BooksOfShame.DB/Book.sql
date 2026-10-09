@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[Book]
+(
+	[Id] UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID(),
+	[Title] NVARCHAR(50) not null,
+	[Desc] NVARCHAR(2000) null,
+	[Status_Id] INT NOT NULL,
+	[Create_Date] DATETIME2 DEFAULT GETDATE()
+	
+	CONSTRAINT PK_Book PRIMARY KEY ([Id]),
+	CONSTRAINT FK_Book__Book_Status 
+		FOREIGN KEY([Status_Id]) 
+		REFERENCES [Book_Status]([Id])
+)

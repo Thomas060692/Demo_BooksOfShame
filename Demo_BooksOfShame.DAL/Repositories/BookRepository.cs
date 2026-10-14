@@ -29,7 +29,7 @@ namespace Demo_BooksOfShame.DAL.Repositories
                     CreateDate = (DateTime)reader["Create_Date"],
                     Status = new BooksStatusEntity()
                     {
-                        Id = (int)reader["Id"],
+                        Id = (int)reader["Status_Id"],
                         Name = (string)reader["Status_Name"],
                     }
                 };
